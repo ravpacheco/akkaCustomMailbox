@@ -1,0 +1,14 @@
+
+custom-dispatcher {
+    mailbox-requirement =
+    "mailbox.MyUnboundedMessageQueueSemantics"
+  }
+
+  akka.actor.mailbox.requirements {
+    "mailbox.MyUnboundedMessageQueueSemantics" =
+    custom-dispatcher-mailbox
+  }
+
+  custom-dispatcher-mailbox {
+    mailbox-type = "mailbox.MyUnboundedMailbox"
+  }
